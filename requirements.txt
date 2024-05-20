@@ -4,3 +4,7 @@ llama-index
 llama-index-llms-openai
 nltk
 pypdf
+streamlit_chat
+langchain
+faiss-cpu
+tiktoken
