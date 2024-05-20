@@ -1,8 +1,6 @@
 import streamlit as st
 import streamlit as st
 from streamlit_chat import message
-from llama_index import SimpleDirectoryReader
-from llama_index import Document
 
 
 import tempfile
