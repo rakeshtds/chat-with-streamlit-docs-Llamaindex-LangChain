@@ -28,7 +28,7 @@ def load_data():
         docs = reader.load_data()
         # llm = OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an expert o$
         # index = VectorStoreIndex.from_documents(docs)
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-4-turbo", temperature=0, system_prompt="This application helps data analysts to explore the data for Asset Direct and no hallusinations ."))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-4-turbo", temperature=0, system_prompt="This application is designed to help users explore and analyze a dataset containing information about various loan and financial products offered by different companies across Canada. The dataset includes details such as loan amounts, interest rates, eligibility criteria, and operational regions.No Hallusinations."))
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         return index
 
