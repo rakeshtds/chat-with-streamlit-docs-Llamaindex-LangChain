@@ -1,6 +1,9 @@
 import streamlit as st
 import streamlit as st
 from streamlit_chat import message
+from llama_index import SimpleDirectoryReader
+from llama_index import Document
+
 
 import tempfile
 
@@ -25,10 +28,9 @@ if "messages" not in st.session_state.keys(): # Initialize the chat messages his
 def load_data():
     with st.spinner(text="Loading and indexing the Streamlit docs – hang tight! This should take 1-2 minutes."):
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
+      
         docs = reader.load_data()
-        # llm = OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an expert o$
-        # index = VectorStoreIndex.from_documents(docs)
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-4-turbo", temperature=0, system_prompt="This application is designed to help users explore and analyze a dataset containing information about various loan and financial products offered by different companies across Canada. The dataset includes details such as loan amounts, interest rates, eligibility criteria, and operational regions.No Hallusinations."))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-4-turbo", temperature=0.1, system_prompt="This application is designed to help users explore and analyze a dataset containing information about various loan and financial products offered by different companies across Canada. The dataset includes details such as loan amounts, interest rates, eligibility criteria, and operational regions.No Hallusinations."))
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         return index
 
