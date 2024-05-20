@@ -26,16 +26,15 @@ def load_data():
         # llm = OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an expert o$
         # index = VectorStoreIndex.from_documents(docs)
         service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-4-turbo", temperature=0, system_prompt="This application is designed to help users explore and analyze a dataset containing information about various loan and financial products offered by different companies across Canada. The dataset includes details such as loan amounts, interest rates, eligibility criteria, and operational regions. The key fields in the dataset are:
-
-Id: Unique identifier for each record.
-Name: Name of the product or service.
-Min_range: Minimum loan amount or range.
-Max_range: Maximum loan amount or range.
-Interest_rate: Interest rate applicable to the product/service.
-Period: Duration of the loan/service in months.
-Provinces: Canadian provinces where the product/service is available.
-Employment: Types of employment eligible for the product/service.
-Monthly_income: Required monthly income to qualify.
+        Id: Unique identifier for each record.
+        Name: Name of the product or service.
+        Min_range: Minimum loan amount or range.
+        Max_range: Maximum loan amount or range.
+        Interest_rate: Interest rate applicable to the product/service.
+        Period: Duration of the loan/service in months.
+        Provinces: Canadian provinces where the product/service is available.
+        Employment: Types of employment eligible for the product/service.
+        Monthly_income: Required monthly income to qualify.
 Residency_reqd: Residency requirements for applicants.
 Credit_type: Acceptable credit score types for eligibility.
 Debt_percentage: Debt-to-income ratio for eligibility.
